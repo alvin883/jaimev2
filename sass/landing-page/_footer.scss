@@ -1,0 +1,167 @@
+#before-footer {
+    position: relative;
+    padding-top: 20px;
+
+    .section1 {
+        position: inherit;
+        text-align: center;
+
+        button {
+            @include button-outline(#2f8586, #ffffff);
+
+            text-transform: uppercase;
+            padding: 0 30px;
+            margin: 0 24px;
+            text-transform: uppercase;
+        }
+    }
+    @include media-breakpoint-down(xs) {
+        .section1 {
+            display: grid;
+            button {
+                margin: 10px auto;
+            }
+        }
+    }
+
+    .instagram {
+        padding-top: 56px;
+        text-align: center;
+
+        .title {
+            font-size: 32px;
+            font-weight: 600;
+            font-style: italic;
+            padding-bottom: 12px;
+        }
+        .subtitle {
+            .divider {
+                position: relative;
+                width: 16px;
+                display: inline-flex;
+            }
+        }
+        .slider {
+            position: relative;
+            margin-top: 20px;
+            width: 100%;
+            margin: auto;
+            overflow: hidden;
+
+            .content {
+                position: relative;
+                height: 326px;
+                width: 100%;
+                left: 0;
+                z-index: 0;
+                transition: var(--transition);
+        
+                .slick-arrow {
+                    position: absolute;
+                    height: 80px;
+                    width: 80px;
+                    z-index: 3;
+                    text-align: center;
+                    border-radius: 50%;
+                    color: #ffffff; 
+                    background: rgba(0, 0, 0, .4) url("src/img/chevron.png") no-repeat 45% 50% / auto 48px;
+        
+                    &::before {
+                        content: none;
+                    }
+                    &.slick-prev {
+                        left: 65px;
+                    }
+                    &.slick-next {
+                        right: 65px;
+                        transform: translateY(-50%) rotate(180deg);
+                    }
+                }
+
+                .slick-list, .slick-track {
+                    position: relative;
+                    height: 100%;
+                }
+                .item {
+                    position: relative;
+                    width: fit-content;
+                    height: 100%;
+                    cursor: pointer;
+
+                    img {
+                        height: 100%;
+                        width: auto;
+                    }
+                    
+                    .detail {
+                        position: absolute;
+                        display: block;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,100%);
+                        z-index: 2;
+                        opacity: 0;
+                        transition: var(--transition);
+                        color: #ffffff;
+
+                        .divider {margin: 0 6px;}
+
+                        span {
+                            font-weight: 600;
+                            margin: 0 2px;
+                            vertical-align: middle;
+                            &.mdi {
+                                margin-right: 4px;
+                            }
+                        }
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        z-index: 1;
+                        opacity: 0;
+                        transition: var(--transition);
+                        background: #000000A0;
+                    }
+
+                    &:hover {
+                        &::after,& .detail {
+                            opacity: 1;
+                        }
+                        & .detail{
+                            transform: translate(-50%,-50%);
+                        }
+                    }
+                }
+            }
+
+            .next,.prev {
+                position: absolute;
+                height: 80px;
+                width: 80px;
+                top: 50%;
+                left: 0;
+                z-index: 3;
+                transform: translate(-50%,-50%);
+                text-align: center;
+                border-radius: 50%;
+                color: #ffffff; 
+                background: rgba(0, 0, 0, .4) url("src/img/chevron.png") no-repeat 45% 50% / auto 48px;
+            }
+            .next {
+                left: unset;
+                right: 65px;
+                transform: translate(50%,-50%) rotate(180deg);
+            }
+            .prev {
+                left: 65px;
+            }
+        }
+        #instagram_slider {margin-top: 26px;}
+    }
+}

@@ -1,0 +1,181 @@
+// Button rounded
+@mixin button-fab($color: #ffffff,$colorhover: inherit,$size: 30px) {
+    position: relative;
+    height: $size;
+    width: $size;
+    padding: 0;
+    overflow: hidden;
+    transition: .5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 2px solid $color;
+    color: $color;
+    background: transparent;
+
+    &:hover,&:focus {
+        color: $colorhover;
+        background: $color;
+    }
+    
+    .fab,.fas { 
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+// Button with outline
+@mixin button-outline($color,$colorhover: $color) {
+    position: relative;
+    height: 40px;
+    padding: 0 12px;
+    box-sizing: border-box;
+    border: 2px solid $color;
+    color: $color;
+    transition: var(--transition);
+    background: transparent;
+
+    .mdi {vertical-align: middle;}
+    &:hover,&:focus {
+        color: $colorhover;
+        background: $color;
+    }
+}
+
+
+// Button with no outline and with background
+@mixin button-wBg($bg,$color: #ffffff) {
+    position: relative;
+    height: 40px;
+    padding: 0 12px;
+    box-sizing: border-box;
+    border: none;
+    color: $color;
+    transition: var(--transition);
+    background: mix($bg,transparent,60%);
+
+    .mdi {vertical-align: middle;}
+    &:hover,&:focus {
+        background: $bg;
+    }
+}
+
+
+// Input with outline
+@mixin input($color) {
+    height: 40px;
+    width: 300px;
+    padding: 0 22px;
+    transition: var(--transition);
+    color: $color;
+    box-sizing: border-box;
+    border: 2px solid mix($color,transparent,20%);
+    border-radius: 3px;
+    background: transparent;
+
+    &::placeholder {
+        color: mix($color,transparent,40%);
+    }
+    &:hover,&:focus,&.active {
+        border: 2px solid $color;
+    }
+}
+
+
+@mixin card(){
+    position: relative;
+    padding: 28px;
+    margin: 40px 20px;
+    box-shadow: var(--box-shadow-1);
+    border-radius: 5px;
+    background: #fff;
+
+    &.has_thumb {padding-top: calc( 210px + 28px )!important;}
+    .flying-bookmark {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 2
+    }
+    .title {
+        font-size: 18px;
+        font-weight: 600;
+        padding: 6px 0;
+    }
+    .image {
+        position: absolute;
+        width: 100%;
+        height: 210px;
+        top: 0;
+        left: 0;
+        border-radius: 5px 5px 0 0; 
+    }
+    .detail,.page_header .detail {
+        position: relative;
+        font-size: 12px;
+        font-weight: 400;
+        padding-left: 45px;
+    }
+        .detail .avatar,.page_header .detail .avatar {
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            line-height: 30px;
+            height: 30px;
+            width: 30px;
+            transform: translateY(-50%);
+            text-align: center;
+            border-radius: 50%;
+            color: #5f636860;
+            background: #eceff1;
+        }
+            .detail a,.page_header .detail a {
+                text-transform: capitalize;
+                font-weight: 600;
+                text-decoration: none;
+            }
+        .detail .opacity,.page_header .detail .opacity {
+            line-height: 20px;
+            opacity: .6;
+        }
+        .page_header .detail .avatar {background: #ffffffD0;}
+        .page_header .detail .opacity {opacity: .8;}
+    article {
+        padding-top: 10px;
+        font-size: 14px;
+        line-height: 24px;
+    }
+}
+
+
+
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}

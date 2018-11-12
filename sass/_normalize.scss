@@ -1,0 +1,36 @@
+body {
+    width: 100%;
+    overflow-x: hidden;
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-family: 'roboto';
+    color: #5f6368;
+    --transition: .5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-very-fast: .3s cubic-bezier(0.4, 0, 0.2, 1);
+    --box-shadow-d-2: 0 2px 5px 0 rgba(32,33,36,0.12), 0 15px 38px 0 rgba(32,33,36,0.09);
+    --box-shadow-1: 0 2px 5px 0 rgba(32,33,36,0.05), 0 15px 38px 0 rgba(32,33,36,0.04);
+    --box-shadow-2: 0 1px 4px 0 rgba(32,33,36,0.05), 0 5px 20px 0 rgba(32,33,36,0.04);
+    --box-shadow-3: 0 5px 15px 0 rgba(32,33,36,0.02);
+}
+
+*,*:link,*:visited,button:focus {outline: none;}
+
+/* Default */
+#s::-webkit-input-placeholder,.comment_input::-webkit-input-placeholder{
+    color: inherit;
+    opacity: .4;
+}
+
+html,body {
+	height: 100%;
+	margin-top: 0!important;
+    margin: 0px 0px 0px 0px!important;
+}
+button {
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    outline: none!important;
+    background: none;
+}

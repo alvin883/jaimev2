@@ -1,0 +1,103 @@
+.al-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.container1 {
+    background: black;// url("src/img/jaime-0.png") no-repeat center / cover;
+
+
+    .content {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        text-align: center;
+        color: #ffffff;
+        
+        .slick-arrow {
+            z-index: 3;
+            height: 48px;
+            width: 48px;
+            background: url("src/img/chevron.png") no-repeat center / contain;
+
+            &::before {
+                content: none;
+            }
+            &.slick-prev {
+                left: 65px;
+            }
+            &.slick-next {
+                right: 65px;
+                transform: translateY(-50%) rotate(180deg);
+            }
+        }
+
+        .slick-list {
+            height: 100%;
+            .slick-track {
+                height: 100%;
+            }
+        }
+        .item,.fixed_header {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            transition: var(--transition);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            .centered_content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+
+                .category {
+                    font-size: 14px; 
+                    text-transform: uppercase;
+                }
+                .title {
+                    padding: 4px 0;
+                    opacity: 1;
+                    font-size: 28px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                }
+                .detail {
+                    font-size: 14px;
+                    transition: var(--transition);
+                    a {
+                        text-transform: capitalize;
+                        color: inherit;
+                        text-decoration: none;
+                    }
+                    .divider {
+                        padding: 0 12px;
+                    }
+                }
+            }
+        }
+    }
+    .next,.prev {
+        position: absolute;
+        height: 48px;
+        width: 48px;
+        top: 50%;
+        left: 50%;
+        left: 0;
+        text-align: center;
+        color: #ffffff;
+        background: url("src/img/chevron.png") no-repeat center / contain;
+    }
+    .next {
+        left: unset;
+        right: 65px;
+        transform: rotate(180deg);
+    }
+    .prev {
+        left: 65px;
+    }
+}
