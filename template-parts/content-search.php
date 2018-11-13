@@ -9,27 +9,33 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
-			jaime_posted_on();
-			jaime_posted_by();
-			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php jaime_post_thumbnail(); ?>
-
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php jaime_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+<a href="<?php echo the_permalink();?>">
+	<div class="al-card">
+		<div class="header">
+		<?php if(has_post_thumbnail()){ ?>
+			<img src="<?php the_post_thumbnail_url('banner'); ?>" alt="" width="100%">
+			
+		<?php } ?>
+			<div class="category">
+				<?php
+					$categories = get_the_category();
+					if($categories){
+							$iteration = 0;
+							foreach ($categories as $category) {
+								if($iteration != 0){echo ' - ';}
+								echo $category->cat_name;
+								$iteration ++;
+							}
+					} 
+				?>
+			</div>
+			<div class="title"><?php the_title(); ?></div>
+		</div>
+		<div class="content">
+			<?php the_excerpt(); ?>
+		</div>
+		<div class="footer">
+			<button class="btn" onclick="gotoURL(this);" data-url="<?php the_permalink(); ?>">read more</button>
+		</div>
+	</div>
+</a>
