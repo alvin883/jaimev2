@@ -28,7 +28,7 @@
 // Button with outline
 @mixin button-outline($color,$colorhover: $color) {
     position: relative;
-    height: 40px;
+    line-height: 36px;
     padding: 0 12px;
     box-sizing: border-box;
     border: 2px solid $color;

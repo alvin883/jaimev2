@@ -6391,12 +6391,13 @@ button {
     padding-top: 10px;
     justify-content: center;
     color: #ffffff; }
-    #navbar-top .navbar.second button {
+    #navbar-top .navbar.second a {
       position: relative;
+      text-decoration: none;
       text-transform: uppercase;
       font-style: italic;
       color: inherit; }
-      #navbar-top .navbar.second button::after {
+      #navbar-top .navbar.second a::after {
         content: '';
         position: absolute;
         bottom: -5px;
@@ -6405,7 +6406,7 @@ button {
         width: 0;
         transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         background: #ffffff; }
-      #navbar-top .navbar.second button:hover:after, #navbar-top .navbar.second button:focus:after {
+      #navbar-top .navbar.second a:hover:after, #navbar-top .navbar.second a:focus:after {
         width: 100%; }
     @media (max-width: 575.98px) {
       #navbar-top .navbar.second {
@@ -6811,7 +6812,7 @@ button {
     text-align: center; }
     #before-footer .section1 button {
       position: relative;
-      height: 40px;
+      line-height: 36px;
       padding: 0 12px;
       box-sizing: border-box;
       border: 2px solid #2f8586;
@@ -6959,6 +6960,10 @@ button {
     #before-footer .instagram #instagram_slider {
       margin-top: 26px; }
 
+.al-page .header.no-thumb {
+  height: 150px;
+  background: linear-gradient(45deg, #3db3b5, #266d6f); }
+
 .al-page .header .thumbnail {
   position: relative;
   height: 400px;
@@ -6997,19 +7002,21 @@ button {
         color: #33a5a7; }
   .al-page .content-wrapper .left .footer {
     padding-top: 0; }
-    .al-page .content-wrapper .left .footer button {
+    .al-page .content-wrapper .left .footer button, .al-page .content-wrapper .left .footer a {
       position: relative;
-      height: 40px;
+      line-height: 36px;
       padding: 0 12px;
       box-sizing: border-box;
       border: 2px solid #3db3b5;
       color: #3db3b5;
       transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       background: transparent;
+      text-decoration: none;
+      display: inline-block;
       border-radius: 50px; }
-      .al-page .content-wrapper .left .footer button .mdi {
+      .al-page .content-wrapper .left .footer button .mdi, .al-page .content-wrapper .left .footer a .mdi {
         vertical-align: middle; }
-      .al-page .content-wrapper .left .footer button:hover, .al-page .content-wrapper .left .footer button:focus {
+      .al-page .content-wrapper .left .footer button:hover, .al-page .content-wrapper .left .footer button:focus, .al-page .content-wrapper .left .footer a:hover, .al-page .content-wrapper .left .footer a:focus {
         color: #ffffff;
         background: #3db3b5; }
   .al-page .content-wrapper .right {
@@ -7024,6 +7031,10 @@ button {
         margin-top: 40px;
         margin-left: 0px; } }
 
+.al-page .header.no-thumb {
+  height: 150px;
+  background: linear-gradient(45deg, #3db3b5, #266d6f); }
+
 .al-page .header .thumbnail {
   position: relative;
   height: 400px;
@@ -7062,19 +7073,21 @@ button {
         color: #33a5a7; }
   .al-page .content-wrapper .left .footer {
     padding-top: 0; }
-    .al-page .content-wrapper .left .footer button {
+    .al-page .content-wrapper .left .footer button, .al-page .content-wrapper .left .footer a {
       position: relative;
-      height: 40px;
+      line-height: 36px;
       padding: 0 12px;
       box-sizing: border-box;
       border: 2px solid #3db3b5;
       color: #3db3b5;
       transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       background: transparent;
+      text-decoration: none;
+      display: inline-block;
       border-radius: 50px; }
-      .al-page .content-wrapper .left .footer button .mdi {
+      .al-page .content-wrapper .left .footer button .mdi, .al-page .content-wrapper .left .footer a .mdi {
         vertical-align: middle; }
-      .al-page .content-wrapper .left .footer button:hover, .al-page .content-wrapper .left .footer button:focus {
+      .al-page .content-wrapper .left .footer button:hover, .al-page .content-wrapper .left .footer button:focus, .al-page .content-wrapper .left .footer a:hover, .al-page .content-wrapper .left .footer a:focus {
         color: #ffffff;
         background: #3db3b5; }
   .al-page .content-wrapper .right {

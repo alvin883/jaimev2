@@ -2,6 +2,10 @@
 
 .al-page {
     .header {
+        &.no-thumb {
+            height: 150px;
+            background: linear-gradient(45deg,$color__background-theme-1,$color__background-theme-3);
+        }
         .thumbnail {
             position: relative;
             height: 400px;
@@ -49,8 +53,10 @@
             }
             .footer {
                 padding-top: 0;
-                button {
+                button,a {
                     @include button-outline($color__background-theme-1,#ffffff);
+                    text-decoration: none;
+                    display: inline-block;
                     border-radius: 50px;
                 }
             }

@@ -9,7 +9,7 @@
 
 ?>
 <div class="al-page">
-	<div class="header">
+	<div class="header <?php if(!has_post_thumbnail()){echo 'no-thumb';}?>">
 	<?php if(has_post_thumbnail()){ ?>
 		<div class="thumbnail" style="background-image: url('<?php the_post_thumbnail_url(); ?>')">
 			<div class="centered_content">
@@ -28,7 +28,7 @@
 				</div>
 				<div class="title"><?php the_title(); ?></div>
 				<div class="detail">
-					by <?php the_author(); ?> <span class="divider">|</span> <?php the_time('d F Y'); ?>
+					by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php the_author(); ?></a> <span class="divider">|</span> <?php the_time('d F Y'); ?>
 				</div>
 			</div>
 		</div>
@@ -45,7 +45,7 @@
 					if($categories){
 							foreach ($categories as $category) {
 				?> 
-									<button class="m-1"><?php echo $category->cat_name; ?></button>
+									<a href="<?php echo get_category_link( $category->term_id );?>"><?php echo $category->cat_name; ?></a>
 				<?php
 							}
 					} 

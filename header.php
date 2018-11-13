@@ -55,8 +55,8 @@
 			</button>
 		</nav>
 		<nav class="navbar second">
-			<button class="m-2">Blog</button> -
-			<button class="m-2">Jaime</button> -
-			<button class="m-2">Contact</button>
+			<a href="<?php echo get_home_url('/'); ?>" class="m-2">Blog</a> -
+			<a href="<?php echo get_home_url('/'); ?>" class="m-2">Jaime</a> -
+			<a href="<?php echo get_home_url('/'); ?>" class="m-2">Contact</a>
 		</nav>
 	</div>
