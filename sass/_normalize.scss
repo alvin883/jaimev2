@@ -6,15 +6,11 @@ body {
     padding: 0;
     font-family: 'roboto';
     color: #5f6368;
-    --box-shadow-d-2: 0 2px 5px 0 rgba(32,33,36,0.12), 0 15px 38px 0 rgba(32,33,36,0.09);
-    --box-shadow-1: 0 2px 5px 0 rgba(32,33,36,0.05), 0 15px 38px 0 rgba(32,33,36,0.04);
-    --box-shadow-2: 0 1px 4px 0 rgba(32,33,36,0.05), 0 5px 20px 0 rgba(32,33,36,0.04);
-    --box-shadow-3: 0 5px 15px 0 rgba(32,33,36,0.02);
 }
 
 *,*:link,*:visited,button:focus {outline: none;}
 
-/* Default */
+/* Placeholder */
 #s::-webkit-input-placeholder,.comment_input::-webkit-input-placeholder{
     color: inherit;
     opacity: .4;

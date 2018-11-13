@@ -1,0 +1,30 @@
+.sidebar {
+    .widget-title {
+        @include title();
+    }
+    ul {
+        padding: 0;
+        list-style: none;
+        li {
+            a{
+                position: relative;
+                font-size: 14px;
+                width: fit-content;
+                padding: 5px 20px;
+                display: block;
+                text-decoration: none;
+                transition: $transition;
+                border-radius: 50px;
+                color: $color__background-theme-1;
+                abbr {
+                    text-decoration: inherit;
+                }
+                &:hover, &:focus {
+                    color: $color__background-theme-3;
+                    background: mix($color__background-theme-1, transparent, 10%);
+                }
+
+            }
+        }
+    }
+}
