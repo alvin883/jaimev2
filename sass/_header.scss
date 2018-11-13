@@ -89,3 +89,22 @@
         }
     }
 }
+
+#mini-header { 
+    position: relative;
+    min-height: 100px;
+    width: 100%;
+    padding: 170px 65px 40px 65px;
+    color: #ffffff;
+    background: $color__background-theme-1;
+    
+    .sub-header {
+        width: max-content;
+        min-width: 30%;
+        padding: 10px 30px;
+        border-radius: 5px;
+        background: $color__background-theme-2;
+        .title { @include title(); }
+        .subtitle { @include subtitle(); }
+    }
+}
