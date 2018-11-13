@@ -15,61 +15,84 @@
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
-if ( post_password_required() ) {
-	return;
-}
+?>
+<?php
+    if(post_password_required()) return;
 ?>
 
-<div id="comments" class="comments-area">
+<div id="comments">
+    <?php if(have_comments()) { ?>
+        <div class="title">
+            <?php 
+                $comments_number = get_comments_number();
 
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
-		?>
-		<h2 class="comments-title">
-			<?php
-			$jaime_comment_count = get_comments_number();
-			if ( '1' === $jaime_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'jaime' ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			} else {
-				printf( // WPCS: XSS OK.
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $jaime_comment_count, 'comments title', 'jaime' ) ),
-					number_format_i18n( $jaime_comment_count ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			}
+                printf(
+                    _nx( 'One Comment',
+                        '%1$s Comments',
+                        get_comments_number(), 
+                        'comments title', 
+                        'alvin'
+                    ),
+                    number_format_i18n( get_comments_number() ),
+                    '<span>' . get_the_title() . '</span>' );
+            ?>
+        </div>
+        
+		<div class="comment-list">
+            <?php
+                wp_list_comments( array(
+                    'type' => 'comment',
+                    'style' => 'div',
+                    'callback' => 'mytheme_comment'
+                ));
 			?>
-		</h2><!-- .comments-title -->
+        </div>
+    <?php }
+    
+    
 
-		<?php the_comments_navigation(); ?>
 
-		<ol class="comment-list">
-			<?php
-			wp_list_comments( array(
-				'style'      => 'ol',
-				'short_ping' => true,
-			) );
-			?>
-		</ol><!-- .comment-list -->
+    if ( comments_open() ) : ?>
 
-		<?php
-		the_comments_navigation();
+        <form action="<?php echo site_url('/wp-comments-post.php') ?>" method="post">
 
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
-			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'jaime' ); ?></p>
-			<?php
-		endif;
+            <div class="card">
+                <div class="title">Your Comment</div>
 
-	endif; // Check for have_comments().
+                <?php if(is_user_logged_in()){ ?>
+                	<div class="detail" style="padding-left: 0;padding-bottom: 10px;">Logged in as <?php echo get_user_option('user_nicename'); ?></div>
+				<?php }else{ ?>
+					<div class="detail" style="padding-left: 0;padding-bottom: 10px;">Fill all field !</div>
 
-	comment_form();
-	?>
+					<div class="comment_box">
+						<div class="comment_label">Name</div>
+						<input type="text" name="author" class="comment_input" id="comment-author" required  onkeypress="inputCheck(this);" onblur="inputCheck(this);" placeholder="Your full name ..."/>
+					</div>
 
-</div><!-- #comments -->
+					<div class="comment_box">
+						<div class="comment_label">Email</div>
+						<input type="text" name="email" class="comment_input" id="comment-email" required  onkeypress="inputCheck(this);" onblur="inputCheck(this);" placeholder="Your email address ..."/>
+					</div>
+
+				<?php } ?>
+
+                <textarea class="comment_input" onkeypress="inputCheck(this);" onblur="inputCheck(this);" name="comment" id="comment-body" required placeholder="Write your comment ..."></textarea>
+
+                <div class="action">
+                    <button type="submit" class="al" data-url="<?php the_permalink();?>" onclick="gotoURL(this);">Submit <span class="mdi mdi-rotate-180 mdi-keyboard-backspace" style="margin-left: 8px;"></span></button>
+                </div>
+            </div>
+			<?php comment_form_hidden_fields(); ?>
+		</form>
+
+	<?php else : ?>
+
+		<hr />
+
+		<p class="nocomments">
+			Comments are closed for this article.
+		</p>
+
+	<?php endif ?>
+
+</div>

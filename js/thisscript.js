@@ -28,7 +28,7 @@ function toggleSearchPage() {
 	var active = $('#searchpage').hasClass('active');
 
 	if (!active) {
-		//$('#s').trigger('focus');
+		$('#searchstring').trigger('focus');
 		return $('#searchpage').addClass('active');
 	}
 	//$('#searchbutton').trigger('focus');
@@ -113,6 +113,7 @@ function get_instagram(username = 'just_anonym883'){
         return val;
     }
 
+    if( !$('#instagram_slider').length ) return false;
     Instagram_Fecth(username)
         .then(sharedData => {
             // Get user data

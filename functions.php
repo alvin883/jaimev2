@@ -126,6 +126,23 @@ remove_filter( 'the_content', 'wpautop' );
 
 
 /**
+ * Custom Comment Template
+ */
+require get_template_directory() . '/template-parts/custom-comments.php';
+
+
+/**
+ * Comment form hidden fields
+ */
+function comment_form_hidden_fields(){
+    comment_id_fields();
+    if ( current_user_can( 'unfiltered_html' ) ){
+        wp_nonce_field( 'unfiltered-html-comment_' . get_the_ID(), '_wp_unfiltered_html_comment', false );
+    }
+}
+
+
+/**
  * Enqueue scripts and styles.
  */
 function jaime_scripts() {

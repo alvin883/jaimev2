@@ -7001,8 +7001,8 @@ button {
         line-height: 1;
         color: #33a5a7; }
   .al-page .content-wrapper .left .footer {
-    padding-top: 0; }
-    .al-page .content-wrapper .left .footer button, .al-page .content-wrapper .left .footer a {
+    padding-top: 20px; }
+    .al-page .content-wrapper .left .footer a {
       position: relative;
       line-height: 36px;
       padding: 0 12px;
@@ -7014,9 +7014,9 @@ button {
       text-decoration: none;
       display: inline-block;
       border-radius: 50px; }
-      .al-page .content-wrapper .left .footer button .mdi, .al-page .content-wrapper .left .footer a .mdi {
+      .al-page .content-wrapper .left .footer a .mdi {
         vertical-align: middle; }
-      .al-page .content-wrapper .left .footer button:hover, .al-page .content-wrapper .left .footer button:focus, .al-page .content-wrapper .left .footer a:hover, .al-page .content-wrapper .left .footer a:focus {
+      .al-page .content-wrapper .left .footer a:hover, .al-page .content-wrapper .left .footer a:focus {
         color: #ffffff;
         background: #3db3b5; }
   .al-page .content-wrapper .right {
@@ -7072,8 +7072,8 @@ button {
         line-height: 1;
         color: #33a5a7; }
   .al-page .content-wrapper .left .footer {
-    padding-top: 0; }
-    .al-page .content-wrapper .left .footer button, .al-page .content-wrapper .left .footer a {
+    padding-top: 20px; }
+    .al-page .content-wrapper .left .footer a {
       position: relative;
       line-height: 36px;
       padding: 0 12px;
@@ -7085,9 +7085,9 @@ button {
       text-decoration: none;
       display: inline-block;
       border-radius: 50px; }
-      .al-page .content-wrapper .left .footer button .mdi, .al-page .content-wrapper .left .footer a .mdi {
+      .al-page .content-wrapper .left .footer a .mdi {
         vertical-align: middle; }
-      .al-page .content-wrapper .left .footer button:hover, .al-page .content-wrapper .left .footer button:focus, .al-page .content-wrapper .left .footer a:hover, .al-page .content-wrapper .left .footer a:focus {
+      .al-page .content-wrapper .left .footer a:hover, .al-page .content-wrapper .left .footer a:focus {
         color: #ffffff;
         background: #3db3b5; }
   .al-page .content-wrapper .right {

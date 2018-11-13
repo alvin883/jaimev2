@@ -52,8 +52,8 @@
                 }
             }
             .footer {
-                padding-top: 0;
-                button,a {
+                padding-top: 20px;
+                a {
                     @include button-outline($color__background-theme-1,#ffffff);
                     text-decoration: none;
                     display: inline-block;
