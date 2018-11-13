@@ -102,6 +102,17 @@ function get_instagram(username = 'just_anonym883'){
         }
     }
 
+    
+    function customToFixed(val){
+        if( val > 1000 ){
+            val = (val / 1000) - parseInt( val / 1000 ) > 0 ?
+                parseFloat(val / 1000).toFixed(1) :
+                parseInt(val / 1000);
+            val += "k";
+        }
+        return val;
+    }
+
     Instagram_Fecth(username)
         .then(sharedData => {
             // Get user data
@@ -113,16 +124,16 @@ function get_instagram(username = 'just_anonym883'){
                     `<div class="item" data-url="https://www.instagram.com/p/`+ val.node.shortcode + `" onclick="gotoURL(this)">
                         <img src="` + val.node.thumbnail_src + `"/>
                         <div class="detail">
-                            <span><i class="fas fa-heart"></i></span><span>` + val.node.edge_liked_by.count + `</span>
+                            <span><i class="fas fa-heart"></i></span><span>` + customToFixed(val.node.edge_liked_by.count) + `</span>
                             <span class="divider"></span>
-                            <span><i class="fas fa-comment"></i></span><span>` + val.node.edge_media_to_comment.count + `</span>
+                            <span><i class="fas fa-comment"></i></span><span>` + customToFixed(val.node.edge_media_to_comment.count) + `</span>
                         </div>
                     </div>`;
             }, ``);
-
+            
             // Variable
-            Instagram.followers = data.edge_followed_by.count;
-            Instagram.posts = data.edge_owner_to_timeline_media.count;
+            Instagram.followers = customToFixed(data.edge_followed_by.count);
+            Instagram.posts = customToFixed(data.edge_owner_to_timeline_media.count);
 
             // Insert to DOM
             document.getElementById('instagram_slider').getElementsByClassName('content')[0].innerHTML = Instagram.DOM;
