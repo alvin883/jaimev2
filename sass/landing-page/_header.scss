@@ -45,7 +45,7 @@
             position: relative;
             height: 100%;
             width: 100%;
-            transition: var(--transition);
+            transition: $transition;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -68,7 +68,7 @@
                 }
                 .detail {
                     font-size: 14px;
-                    transition: var(--transition);
+                    transition: $transition;
                     a {
                         text-transform: capitalize;
                         color: inherit;

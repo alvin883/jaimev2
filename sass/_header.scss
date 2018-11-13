@@ -15,7 +15,7 @@
         padding: 40px 0;
         justify-content: center;
         flex-wrap: wrap;
-        transition: var(--transition);
+        transition: $transition;
         transform: translateY(-130%);
         box-shadow: var(--box-shadow-d-2);
         background: #ffffff;//linear-gradient(135deg,#ffffff 40%,#3db2b4);
@@ -35,7 +35,7 @@
         top: 0;
         left: 0;
         cursor: pointer;
-        transition: var(--transition);
+        transition: $transition;
         background: transparent;
     }
 

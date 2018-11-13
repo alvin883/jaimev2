@@ -6312,8 +6312,6 @@ body {
   padding: 0;
   font-family: 'roboto';
   color: #5f6368;
-  --transition: .5s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-very-fast: .3s cubic-bezier(0.4, 0, 0.2, 1);
   --box-shadow-d-2: 0 2px 5px 0 rgba(32,33,36,0.12), 0 15px 38px 0 rgba(32,33,36,0.09);
   --box-shadow-1: 0 2px 5px 0 rgba(32,33,36,0.05), 0 15px 38px 0 rgba(32,33,36,0.04);
   --box-shadow-2: 0 1px 4px 0 rgba(32,33,36,0.05), 0 5px 20px 0 rgba(32,33,36,0.04);
@@ -6354,7 +6352,7 @@ button {
     padding: 40px 0;
     justify-content: center;
     flex-wrap: wrap;
-    transition: var(--transition);
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     -webkit-transform: translateY(-130%);
             transform: translateY(-130%);
     box-shadow: var(--box-shadow-d-2);
@@ -6363,7 +6361,7 @@ button {
       height: 40px;
       width: 300px;
       padding: 0 22px;
-      transition: var(--transition);
+      transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       color: #266d6f;
       box-sizing: border-box;
       border: 2px solid rgba(38, 109, 111, 0.2);
@@ -6386,7 +6384,7 @@ button {
       box-sizing: border-box;
       border: none;
       color: #ffffff;
-      transition: var(--transition);
+      transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       background: rgba(47, 133, 134, 0.6); }
       #searchpage .searchbar button .mdi {
         vertical-align: middle; }
@@ -6399,7 +6397,7 @@ button {
     top: 0;
     left: 0;
     cursor: pointer;
-    transition: var(--transition);
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     background: transparent; }
   #searchpage.active {
     pointer-events: all; }
@@ -6500,7 +6498,7 @@ button {
     box-sizing: border-box;
     border: none;
     color: #ffffff;
-    transition: var(--transition);
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     background: rgba(47, 133, 134, 0.6); }
     #footer button .mdi {
       vertical-align: middle; }
@@ -6514,7 +6512,7 @@ button {
       height: 40px;
       width: 300px;
       padding: 0 22px;
-      transition: var(--transition);
+      transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       color: #ffffff;
       box-sizing: border-box;
       border: 2px solid rgba(255, 255, 255, 0.2);
@@ -6553,9 +6551,29 @@ button {
         text-transform: capitalize;
         background: transparent; }
         #footer .box .content.social button span.btn-fab {
+          position: relative;
+          height: 30px;
+          width: 30px;
+          padding: 0;
+          overflow: hidden;
+          transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          box-sizing: border-box;
+          border-radius: 50%;
+          border: 2px solid #ffffff;
+          color: #ffffff;
+          background: transparent;
           margin-right: 5px;
           display: inline-flex;
           vertical-align: middle; }
+          #footer .box .content.social button span.btn-fab:hover, #footer .box .content.social button span.btn-fab:focus {
+            color: #000000;
+            background: #ffffff; }
+          #footer .box .content.social button span.btn-fab .fab, #footer .box .content.social button span.btn-fab .fas {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%); }
           #footer .box .content.social button span.btn-fab .mdi {
             margin: auto; }
       @media (max-width: 400px) {
@@ -6616,7 +6634,7 @@ button {
       position: relative;
       height: 100%;
       width: 100%;
-      transition: var(--transition);
+      transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat; }
@@ -6637,7 +6655,7 @@ button {
           text-transform: uppercase; }
         .container1 .content .item .centered_content .detail, .container1 .content .fixed_header .centered_content .detail {
           font-size: 14px;
-          transition: var(--transition); }
+          transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
           .container1 .content .item .centered_content .detail a, .container1 .content .fixed_header .centered_content .detail a {
             text-transform: capitalize;
             color: inherit;
@@ -6675,7 +6693,7 @@ button {
       box-sizing: border-box;
       border: 2px solid #2f8586;
       color: #2f8586;
-      transition: var(--transition);
+      transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       background: transparent;
       text-transform: uppercase;
       padding: 0 30px;
@@ -6715,7 +6733,7 @@ button {
         width: 100%;
         left: 0;
         z-index: 0;
-        transition: var(--transition); }
+        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
         #before-footer .instagram .slider .content .slick-arrow {
           position: absolute;
           height: 80px;
@@ -6755,7 +6773,7 @@ button {
                     transform: translate(-50%, 100%);
             z-index: 2;
             opacity: 0;
-            transition: var(--transition);
+            transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             color: #ffffff; }
             #before-footer .instagram .slider .content .item .detail .divider {
               margin: 0 6px; }
@@ -6774,7 +6792,7 @@ button {
             width: 100%;
             z-index: 1;
             opacity: 0;
-            transition: var(--transition);
+            transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             background: #000000A0; }
           #before-footer .instagram .slider .content .item:hover::after, #before-footer .instagram .slider .content .item:hover .detail {
             opacity: 1; }
@@ -6829,7 +6847,10 @@ button {
     display: inline-block;
     margin-bottom: 20px;
     color: #455a64;
-    text-align: center; }
+    text-align: center;
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+    .card-columns .al-card:hover, .card-columns .al-card:focus {
+      background: #fafafa; }
     .card-columns .al-card .header img {
       border-radius: 5px; }
     .card-columns .al-card .header .category {
@@ -6858,7 +6879,7 @@ button {
     .card-columns .al-card .footer {
       padding-bottom: 30px; }
       .card-columns .al-card .footer button {
-        transition: var(--transition);
+        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         font-size: 16px;
         text-transform: uppercase;
         color: #000000D0; }

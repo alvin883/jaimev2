@@ -30,11 +30,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import '../node_modules/slick-carousel/slick/slick.scss';
 @import '../node_modules/slick-carousel/slick/slick-theme.scss';
 
+// Variable
+@import 'variables-site/index';
+
 // Mixins
 @import 'mixins/mixins-master';
-
-// Colors
-@import 'variables-site/colors';
 
 // Normalize
 @import 'normalize';

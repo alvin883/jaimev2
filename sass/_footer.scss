@@ -55,6 +55,7 @@
 					background: transparent;
 
 					span.btn-fab {
+						@include button-fab(#ffffff,#000000);
 						margin-right: 5px;
 						display: inline-flex;
 						vertical-align: middle;

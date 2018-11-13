@@ -5,7 +5,7 @@
     width: $size;
     padding: 0;
     overflow: hidden;
-    transition: .5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: $transition;
     box-sizing: border-box;
     border-radius: 50%;
     border: 2px solid $color;
@@ -33,7 +33,7 @@
     box-sizing: border-box;
     border: 2px solid $color;
     color: $color;
-    transition: var(--transition);
+    transition: $transition;
     background: transparent;
 
     .mdi {vertical-align: middle;}
@@ -52,7 +52,7 @@
     box-sizing: border-box;
     border: none;
     color: $color;
-    transition: var(--transition);
+    transition: $transition;
     background: mix($bg,transparent,60%);
 
     .mdi {vertical-align: middle;}
@@ -67,7 +67,7 @@
     height: 40px;
     width: 300px;
     padding: 0 22px;
-    transition: var(--transition);
+    transition: $transition;
     color: $color;
     box-sizing: border-box;
     border: 2px solid mix($color,transparent,20%);

@@ -54,7 +54,7 @@
                 width: 100%;
                 left: 0;
                 z-index: 0;
-                transition: var(--transition);
+                transition: $transition;
         
                 .slick-arrow {
                     position: absolute;
@@ -101,7 +101,7 @@
                         transform: translate(-50%,100%);
                         z-index: 2;
                         opacity: 0;
-                        transition: var(--transition);
+                        transition: $transition;
                         color: #ffffff;
 
                         .divider {margin: 0 6px;}
@@ -125,7 +125,7 @@
                         width: 100%;
                         z-index: 1;
                         opacity: 0;
-                        transition: var(--transition);
+                        transition: $transition;
                         background: #000000A0;
                     }
 

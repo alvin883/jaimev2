@@ -25,6 +25,11 @@
         margin-bottom: 20px;
         color: $color__text-dark-3;
         text-align: center;
+        transition: $transition;
+
+        &:hover , &:focus {
+            background: #fafafa;
+        }
 
         .header {
             img { border-radius: 5px; }
@@ -61,7 +66,7 @@
         .footer {
             padding-bottom: 30px;
             button {
-                transition: var(--transition);
+                transition: $transition;
                 font-size: 16px;
                 text-transform: uppercase;
                 color: #000000D0;
