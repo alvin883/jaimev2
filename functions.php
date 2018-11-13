@@ -114,6 +114,12 @@ function new_excerpt_more( $more ) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
+// Excerpt length
+function custom_excerpt_length( $length ) {
+	return 25;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length');
+
 
 // WARNING : this function will remove `<p>` tag from `the_content();`
 remove_filter( 'the_content', 'wpautop' );
