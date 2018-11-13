@@ -1,4 +1,4 @@
-	<div class="al-container container1">
+	<div class="section landing">
 		<div class="easeSwipe_slider slider">
 			<div class="content header-slider">
 

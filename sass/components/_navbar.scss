@@ -1,0 +1,79 @@
+
+// Navigation Top
+#navbar-top {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    button.btn-fab {
+        @include button-fab(#ffffff, #000000);
+    }
+    .navbar {
+        z-index: 10;
+        padding-top: 32px;
+        padding-left: 65px;
+        padding-right: 65px;
+        @include media-breakpoint-down(sm){
+            .btn-group.social {
+                display: none;
+            }
+            &.first {
+                @include media-breakpoint-down(xs){
+                    & {
+                        padding-left: 30px;
+                        padding-right: 30px;
+                    }
+                }
+                flex-direction: row-reverse;
+            }
+        }
+        .logo {
+            position: absolute;
+            height: 50px;
+            width: auto;
+            top: 28px;
+            left: 50%;
+            transform: translate(-50%,0%);
+            @include media-breakpoint-down(xs){
+                & {
+                    left: 30px;
+                    transform: translate(0,0);
+                }   
+            }
+        }
+    }
+    .navbar.second {
+        padding-top: 10px;
+        justify-content: center;
+        color: #ffffff;
+
+        button {
+            position: relative;
+            text-transform: uppercase;
+            font-style: italic;
+            color: inherit;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                height: 2px;
+                width: 0;
+                transition: $transition-2;
+                background: #ffffff;
+            }
+            &:hover:after,&:focus:after {
+                width: 100%;
+            }
+        }
+        @include media-breakpoint-down(xs){
+            & {
+                padding: 0 30px;
+                justify-content: left;
+                font-size: 13px;
+            }
+        }
+    }
+}

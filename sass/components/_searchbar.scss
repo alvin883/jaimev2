@@ -1,0 +1,51 @@
+// Searchbar , style for `searchform.php`
+#searchpage {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    pointer-events: none;
+
+    .searchbar {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        padding: 40px 0;
+        justify-content: center;
+        flex-wrap: wrap;
+        transition: $transition;
+        transform: translateY(-130%);
+        box-shadow: var(--box-shadow-d-2);
+        background: #ffffff;//linear-gradient(135deg,#ffffff 40%,#3db2b4);
+
+        input {
+            @include input(#266d6f);
+        }
+        button {
+            @include button-wBg(#2f8586,#ffffff);
+        }
+    }
+
+    .block {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        transition: $transition;
+        background: transparent;
+    }
+
+    &.active {
+        pointer-events: all;
+        .searchbar {
+            transform: translateY(0);
+        }
+        .block {
+            background: rgba(0, 0, 0, 0.6);
+        }
+    }
+}

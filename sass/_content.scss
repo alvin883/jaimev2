@@ -6,6 +6,7 @@
             position: relative;
             height: 400px;
             width: 100%;
+            z-index: 0;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -13,6 +14,16 @@
                 top: unset;
                 bottom: 80px;
                 transform: translateX(-50%);
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                background: #00000050;
             }
         }
     }
@@ -31,6 +42,7 @@
                             margin: 0 10px 0 40px;
                             font-size: 48px;
                             line-height: 1;
+                            color: $color__background-theme-2;
                         }
                     }
                 }

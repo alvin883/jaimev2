@@ -39,6 +39,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 // Normalize
 @import 'normalize';
 
+/* COMPONENTS
+        |-- searchbar
+        |-- navbar
+*/
+@import 'components/index';
+
 // Header
 @import 'header';
 
