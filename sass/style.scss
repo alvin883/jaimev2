@@ -48,19 +48,5 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 // Landing Page
 @import 'landing-page/index';
 
-#content {
-    position: relative;
-    height: 500px;
-    background: red;
-     
-    .slick-track {
-        position: relative;
-        height: 100%;
-
-        .items {
-            height: 100%;
-            width: 400px;
-            float: left;
-        }
-    }
-}
+// Content
+@import 'content';

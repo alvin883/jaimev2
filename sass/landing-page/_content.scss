@@ -15,7 +15,11 @@
     column-gap: 34px;
     padding: 72px 20px 20px 20px;
 	margin: auto;
-	text-align: center;
+    text-align: center;
+
+    a:hover > .al-card , a:focus > .al-card, .al-card:hover , .al-card:focus {
+        background: #fafafa;
+    }
 
     .al-card {
         position: relative;
@@ -26,10 +30,6 @@
         color: $color__text-dark-3;
         text-align: center;
         transition: $transition;
-
-        &:hover , &:focus {
-            background: #fafafa;
-        }
 
         .header {
             img { border-radius: 5px; }
