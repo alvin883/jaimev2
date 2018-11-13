@@ -108,6 +108,17 @@ function remove_admin_login_header() {
 add_action('get_header', 'remove_admin_login_header');
 
 
+// WARNING : this function will remove `[...]` text from `the_excerpt();`
+function new_excerpt_more( $more ) {
+    return ' ... ';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+
+// WARNING : this function will remove `<p>` tag from `the_content();`
+remove_filter( 'the_content', 'wpautop' );
+
+
 /**
  * Enqueue scripts and styles.
  */
