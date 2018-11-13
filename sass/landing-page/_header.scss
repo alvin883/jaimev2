@@ -14,7 +14,6 @@
         width: 100%;
         top: 0;
         left: 0;
-        text-align: center;
         color: #ffffff;
         
         .slick-arrow {
@@ -33,6 +32,26 @@
                 right: 65px;
                 transform: translateY(-50%) rotate(180deg);
             }
+            @include media-breakpoint-down(sm){
+                &.slick-prev {
+                    left: 20px;
+                }
+                &.slick-next {
+                    right: 20px;
+                }
+            }
+            @include media-breakpoint-down(xs){
+                & {
+                    height: 30px;
+                    width: 30px;
+                }
+                &.slick-prev {
+                    left: 0px;
+                }
+                &.slick-next {
+                    right: 0px;
+                }
+            }
         }
 
         .slick-list {
@@ -49,10 +68,13 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            .centered_content {
+            @at-root .centered_content {
                 position: absolute;
                 top: 50%;
                 left: 50%;
+                min-width: 300px;
+                text-align: center;
+                color: #ffffff;
                 transform: translate(-50%,-50%);
 
                 .category {
@@ -80,24 +102,5 @@
                 }
             }
         }
-    }
-    .next,.prev {
-        position: absolute;
-        height: 48px;
-        width: 48px;
-        top: 50%;
-        left: 50%;
-        left: 0;
-        text-align: center;
-        color: #ffffff;
-        background: url("src/img/chevron.png") no-repeat center / contain;
-    }
-    .next {
-        left: unset;
-        right: 65px;
-        transform: rotate(180deg);
-    }
-    .prev {
-        left: 65px;
     }
 }
