@@ -6458,6 +6458,32 @@ button {
       font-style: italic;
       color: inherit; }
 
+#mini-header {
+  position: relative;
+  min-height: 100px;
+  width: 100%;
+  padding: 170px 65px 40px 65px;
+  color: #ffffff;
+  background: #3db3b5; }
+  #mini-header .sub-header {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    min-width: 30%;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background: #33a5a7; }
+    #mini-header .sub-header .title {
+      font-size: 30px;
+      font-weight: 600;
+      padding: 0px 0; }
+    #mini-header .sub-header .subtitle {
+      font-size: 16px; }
+      #mini-header .sub-header .subtitle:nth-child(1) {
+        opacity: .8; }
+    #mini-header .sub-header > .subtitle:nth-last-child(1) {
+      opacity: .6; }
+
 /* Footer */
 #footer {
   position: relative;
@@ -6802,7 +6828,10 @@ button {
     max-width: 100%;
     display: inline-block;
     margin-bottom: 20px;
+    color: #455a64;
     text-align: center; }
+    .card-columns .al-card .header img {
+      border-radius: 5px; }
     .card-columns .al-card .header .category {
       padding: 12px 0;
       text-transform: capitalize;

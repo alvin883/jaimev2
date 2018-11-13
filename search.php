@@ -12,9 +12,9 @@
 ?>
 	<div id="mini-header">
 		<div class="sub-header">
-			<div class="subtitle opacity-8">Results for : </div>
+			<div class="subtitle">Results for : </div>
 			<div class="title"><?php echo get_search_query(); ?></div>
-			<div class="subtitle opacity-6"><?php echo 'Found ' . $wp_query->found_posts . ' items'; ?></div>
+			<div class="subtitle"><?php echo 'Found ' . $wp_query->found_posts . ' items'; ?></div>
 		</div>
 	</div>	
 <?php

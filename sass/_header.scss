@@ -105,6 +105,11 @@
         border-radius: 5px;
         background: $color__background-theme-2;
         .title { @include title(); }
-        .subtitle { @include subtitle(); }
+        .subtitle { 
+            @include subtitle();
+            
+            &:nth-child(1) { @include opacity-8(); }
+        }
+        & > .subtitle:nth-last-child(1) { @include opacity-6(); }
     }
 }
