@@ -26,8 +26,8 @@
 <body <?php body_class(); ?>>
 	<?php get_search_form(); ?>
 	<div id="navbar-top">
-		<nav class="navbar">
-			<div class="btn-group">
+		<nav class="navbar first">
+			<div class="btn-group social">
 				<?php
                     if(theme_options('general_social') != ''){
 						$social_icons = get_social_media_icons();
@@ -35,8 +35,8 @@
 
                             if(array_key_exists($key,$social_icons) && $value != '' && !empty($value)){
 								?>
-									<a href="<?php echo $value;?>">
-										<button class="btn-fab m-1">
+									<a class="m-1" href="<?php echo $value;?>">
+										<button class="btn-fab">
 											<i class="fab fa-<?php echo $social_icons[$key]["font"]; ?>"></i>
 										</button>
 									</a>
@@ -54,7 +54,7 @@
 				<i class="fas fa-search"></i>
 			</button>
 		</nav>
-		<nav class="navbar center">
+		<nav class="navbar second">
 			<button class="m-2">Blog</button> -
 			<button class="m-2">Jaime</button> -
 			<button class="m-2">Contact</button>
