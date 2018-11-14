@@ -48,6 +48,17 @@
 
         .left {
             .content {
+                .gallery {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    .gallery-item {
+                        float: none!important;
+                        width: fit-content!important;
+                        margin: 10px;
+                    }
+                    img {border: none!important;}
+                }
                 p {
                     text-indent: 60px;
                     &:nth-child(1){

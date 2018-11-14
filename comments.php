@@ -43,7 +43,7 @@
                 wp_list_comments( array(
                     'type' => 'comment',
                     'style' => 'div',
-                    'callback' => 'mytheme_comment'
+                    'callback' => 'mytheme_comment' // look at `inc\custom-comment.php`
                 ));
 			?>
         </div>
