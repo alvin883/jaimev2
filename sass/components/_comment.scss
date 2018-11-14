@@ -61,6 +61,17 @@
             background: $color__text-dark-2;
         }
     }
+    
+    @include media-breakpoint-down(xs){
+        padding: 0 20px;
+        .comment_title { 
+            padding: 10px;
+            padding-bottom: 0;
+            &::after {
+                left: 10px;
+            }
+        }
+    }
 
     .comment-list {
         margin-top: -10px;
