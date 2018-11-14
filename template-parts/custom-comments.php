@@ -53,10 +53,10 @@ function mytheme_comment($comment, $args, $depth) {
                 <div class="avatar">
                     <span class="mdi mdi-account"></span>
                 </div>
-                <div class="opacity">
+                <div class="title">
                     By <?php echo get_comment_author_link();?>
                 </div>
-                <div class="opacity">
+                <div class="subtitle">
                     <?php echo 'on ' . get_comment_date('d F Y'); ?>
                 </div>
             </div>

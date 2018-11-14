@@ -34,28 +34,36 @@
 		</div>
 	<?php } ?>
 	</div>
-	<div class="content-wrapper">
-		<div class="left">
-			<div class="content">
-				<?php the_content(); ?>
+	<div class="wrapper">
+		<div class="content-wrapper">
+			<div class="left">
+				<div class="content">
+					<?php the_content(); ?>
+				</div>
+				<div class="footer">
+					<?php
+						$categories = get_the_category();
+						if($categories){
+								foreach ($categories as $category) {
+					?> 
+										<a href="<?php echo get_category_link( $category->term_id );?>"><?php echo $category->cat_name; ?></a>
+					<?php
+								}
+						} 
+					?>
+				</div>
 			</div>
-			<div class="footer">
-				<?php
-					$categories = get_the_category();
-					if($categories){
-							foreach ($categories as $category) {
-				?> 
-									<a href="<?php echo get_category_link( $category->term_id );?>"><?php echo $category->cat_name; ?></a>
-				<?php
-							}
-					} 
-				?>
+			<div class="right">
+				<div class="sidebar">
+					<?php get_sidebar(); ?>
+				</div>
 			</div>
 		</div>
-		<div class="right">
-			<div class="sidebar">
-				<?php get_sidebar(); ?>
-			</div>
-		</div>
+		<?php
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+		?>
 	</div>
 </div>

@@ -57,12 +57,14 @@
         <form action="<?php echo site_url('/wp-comments-post.php') ?>" method="post">
 
             <div class="card">
-                <div class="title">Your Comment</div>
 
-                <?php if(is_user_logged_in()){ ?>
-                	<div class="detail" style="padding-left: 0;padding-bottom: 10px;">Logged in as <?php echo get_user_option('user_nicename'); ?></div>
-				<?php }else{ ?>
-					<div class="detail" style="padding-left: 0;padding-bottom: 10px;">Fill all field !</div>
+                    <div class="detail">
+                        <div class="bigtitle">Your Comment</div>
+                        <?php if(is_user_logged_in()){ ?>
+                            <div class="subtitle" style="padding-left: 0;padding-bottom: 10px;">Logged in as <?php echo get_user_option('user_nicename'); ?></div>
+                        <?php }else{ ?>
+                            <div class="subtitle" style="padding-left: 0;padding-bottom: 10px;">Fill all field !</div>
+                    </div>
 
 					<div class="comment_box">
 						<div class="comment_label">Name</div>
@@ -79,7 +81,7 @@
                 <textarea class="comment_input" onkeypress="inputCheck(this);" onblur="inputCheck(this);" name="comment" id="comment-body" required placeholder="Write your comment ..."></textarea>
 
                 <div class="action">
-                    <button type="submit" class="al" data-url="<?php the_permalink();?>" onclick="gotoURL(this);">Submit <span class="mdi mdi-rotate-180 mdi-keyboard-backspace" style="margin-left: 8px;"></span></button>
+                    <button type="submit" class="submit">Submit</button>
                 </div>
             </div>
 			<?php comment_form_hidden_fields(); ?>
