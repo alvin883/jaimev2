@@ -40,8 +40,31 @@
         }
 
 #comments {
+    max-width: 750px;
     padding: 0 65px;
-    margin: auto;
+
+    .comment_title {
+        position: relative;
+        padding: 20px;
+        padding-bottom: 0;
+        font-size: 18px;
+        font-weight: 600;
+        color: $color__text-dark-2;
+        &::after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 30px;
+            bottom: -5px;
+            left: 20px;
+            border-radius: 5px;
+            background: $color__text-dark-2;
+        }
+    }
+
+    .comment-list {
+        margin-top: -10px;
+    }
 
     .card {
         display: block;
@@ -70,6 +93,13 @@
         &.child-gray {
             box-shadow: none;
             background: #fdfdfd;
+        }
+        .reply {
+            @include button-wBg($color__background-theme-1);
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 50px;
+            padding: 5px 15px;
         }
         .action {
             button {

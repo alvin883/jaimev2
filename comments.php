@@ -22,13 +22,13 @@
 
 <div id="comments">
     <?php if(have_comments()) { ?>
-        <div class="title">
+        <div class="comment_title">
             <?php 
                 $comments_number = get_comments_number();
 
                 printf(
-                    _nx( 'One Comment',
-                        '%1$s Comments',
+                    _nx( 'One comment on this post',
+                        '%1$s Comments on this post',
                         get_comments_number(), 
                         'comments title', 
                         'alvin'

@@ -5,18 +5,7 @@
  */
 function replace_reply_link_class($class){
     $link = preg_split("/(')/",preg_split("/(href=')/",$class)[1])[0];
-    if(theme_options('comment_box_reply_style') == '0'){
-        // standard button
-        $class = '<button class="al" data-url="' . $link . '" onclick="gotoURL(this);">Reply <span class="mdi mdi-share-outline" style="margin-left: 8px;"></span></button>';
-    }else if(theme_options('comment_box_reply_style') == '1'){
-        // mini button
-        $class = '<button class="al al-mini" data-url="' . $link . '" onclick="gotoURL(this);">Reply <span class="mdi mdi-share-outline" style="margin-left: 8px;"></span></button>';
-    }else if(theme_options('comment_box_reply_style') == '2'){
-        // fab
-        $class = '<button class="al-fab" data-url="' . $link . '" onclick="gotoURL(this);"><span class="mdi mdi-share-outline"></span></button>';
-    }
-    // fab
-    //$class = '<button class="al-fab" data-url="' . $link . '" onclick="gotoURL(this);"><span class="mdi mdi-share-outline"></span></button>';
+    $class = '<a href="' . $link . '" class="reply">Reply</a>';
     return $class;
 }
 add_filter('comment_reply_link', 'replace_reply_link_class');

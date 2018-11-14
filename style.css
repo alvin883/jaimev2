@@ -6621,8 +6621,26 @@ button {
   border: 2px solid #3db3b5; }
 
 #comments {
-  padding: 0 65px;
-  margin: auto; }
+  max-width: 750px;
+  padding: 0 65px; }
+  #comments .comment_title {
+    position: relative;
+    padding: 20px;
+    padding-bottom: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #37474f; }
+    #comments .comment_title::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 30px;
+      bottom: -5px;
+      left: 20px;
+      border-radius: 5px;
+      background: #37474f; }
+  #comments .comment-list {
+    margin-top: -10px; }
   #comments .card {
     display: block;
     padding: 20px;
@@ -6644,6 +6662,23 @@ button {
     #comments .card.child-gray {
       box-shadow: none;
       background: #fdfdfd; }
+    #comments .card .reply {
+      position: relative;
+      height: 40px;
+      padding: 0 12px;
+      box-sizing: border-box;
+      border: none;
+      color: #ffffff;
+      transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      background: rgba(61, 179, 181, 0.6);
+      text-decoration: none;
+      font-size: 14px;
+      border-radius: 50px;
+      padding: 5px 15px; }
+      #comments .card .reply .mdi {
+        vertical-align: middle; }
+      #comments .card .reply:hover, #comments .card .reply:focus {
+        background: #3db3b5; }
     #comments .card .action button {
       position: relative;
       height: 40px;
