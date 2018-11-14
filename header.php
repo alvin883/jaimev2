@@ -48,7 +48,7 @@
                 ?>
 			</div>
 			
-			<img src="<?php if(theme_options('general_nav_logo',false,'url') != ''){echo theme_options('general_nav_logo',false,'url');} ?>" alt="Jaime Logo" class="logo">
+			<img src="<?php echo get_template_directory_uri(); ?>/src/img/jaime-logo.png" alt="Jaime Logo" class="logo">
 
 			<button class="btn-fab m-1" onclick="toggleSearchPage();">
 				<i class="fas fa-search"></i>

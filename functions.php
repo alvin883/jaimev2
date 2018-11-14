@@ -131,11 +131,7 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
-// Redux Framework
-if(!class_exists('ReduxFramework')) require_once (get_template_directory() . '/redux/framework.php');
-// Register Redux
-require_once get_template_directory() . '/inc/redux-config.php';
-// Redux getter
+// The storage
 require_once get_template_directory() . '/inc/theme-options.php';
 
 
