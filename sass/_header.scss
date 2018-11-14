@@ -20,6 +20,15 @@
         }
         & > .subtitle:nth-last-child(1) { @include opacity-6(); }
     }
+
+    @include media-breakpoint-down(xs){
+        .sub-header {
+            width: 100%;
+        }
+    }
+    @include media-breakpoint-down(sm){
+        padding: 170px 20px 40px 20px;
+    }
 }
 
 .section {
