@@ -45,4 +45,4 @@ gulp.task('watch', function () {
 
 
 // Default run of `gulp` command
-gulp.task('default', gulp.parallel([gulp.series('style'), gulp.series('watch')]));
+gulp.task('default', gulp.parallel([gulp.series('styles'), gulp.series('watch')]));

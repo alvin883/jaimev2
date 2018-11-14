@@ -6581,6 +6581,85 @@ button {
       color: #266d6f;
       background: rgba(61, 179, 181, 0.1); }
 
+.comment_box {
+  position: relative;
+  display: flex;
+  margin-top: 8px;
+  flex-wrap: wrap; }
+
+.comment_label {
+  position: relative;
+  width: 50px;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 14px; }
+
+.comment_input {
+  position: relative;
+  width: calc( 100% - 16px - 4px);
+  max-width: 250px;
+  height: 36px;
+  resize: none;
+  margin-top: 6px;
+  padding: 0 8px;
+  transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  font: inherit;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 2px solid #f1f3f4; }
+
+#comment-body {
+  max-width: none;
+  width: calc( 100% - 16px - 4px);
+  height: 88px;
+  margin-top: 14px;
+  margin-bottom: 8px;
+  padding: 8px;
+  line-height: 22px; }
+
+.comment_input.active, .comment_input:hover, .comment_input:focus {
+  border: 2px solid #3db3b5; }
+
+#comments {
+  padding: 0 65px;
+  margin: auto; }
+  #comments .card {
+    display: block;
+    padding: 20px;
+    margin: 40px auto;
+    border: none;
+    box-shadow: 0 2px 5px 0 rgba(32, 33, 36, 0.03), 0 15px 38px 0 rgba(32, 33, 36, 0.01);
+    background: #ffffff; }
+    #comments .card .detail {
+      color: #33a5a7; }
+      #comments .card .detail .bigtitle, #comments .card .detail .title {
+        font-size: 14px;
+        font-weight: 600; }
+      #comments .card .detail .bigtitle {
+        color: #5f6368;
+        font-size: 18px; }
+      #comments .card .detail .subtitle {
+        font-size: 12px;
+        opacity: .8; }
+    #comments .card.child-gray {
+      box-shadow: none;
+      background: #fdfdfd; }
+    #comments .card .action button {
+      position: relative;
+      height: 40px;
+      padding: 0 12px;
+      box-sizing: border-box;
+      border: none;
+      color: #ffffff;
+      transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      background: rgba(61, 179, 181, 0.6);
+      display: block;
+      border-radius: 5px; }
+      #comments .card .action button .mdi {
+        vertical-align: middle; }
+      #comments .card .action button:hover, #comments .card .action button:focus {
+        background: #3db3b5; }
+
 #mini-header {
   position: relative;
   min-height: 100px;
