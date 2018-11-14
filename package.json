@@ -1,0 +1,23 @@
+{
+  "name": "jaimev2",
+  "version": "1.0.0",
+  "description": "Jaime Websites",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvin883/jaimev2.git"
+  },
+  "author": "Alvin Novian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alvin883/jaimev2/issues"
+  },
+  "homepage": "https://github.com/alvin883/jaimev2#readme"
+}
