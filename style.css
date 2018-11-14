@@ -7088,10 +7088,6 @@ button {
     #before-footer .instagram #instagram_slider {
       margin-top: 26px; }
 
-.al-page .header.no-thumb {
-  height: 150px;
-  background: linear-gradient(45deg, #3db3b5, #266d6f); }
-
 .al-page .header .thumbnail {
   position: relative;
   height: 400px;
@@ -7114,6 +7110,17 @@ button {
     left: 0;
     z-index: 2;
     background: #00000050; }
+
+.al-page .header.no-thumb .thumbnail {
+  height: 300px;
+  background: #3db3b5; }
+  .al-page .header.no-thumb .thumbnail .centered_content {
+    bottom: 40px;
+    padding: 20px 10px;
+    border-radius: 10px;
+    background: #33a5a7; }
+  .al-page .header.no-thumb .thumbnail::after {
+    content: none; }
 
 .al-page .content-wrapper {
   padding: 40px 50px;
@@ -7159,10 +7166,6 @@ button {
         margin-top: 40px;
         margin-left: 0px; } }
 
-.al-page .header.no-thumb {
-  height: 150px;
-  background: linear-gradient(45deg, #3db3b5, #266d6f); }
-
 .al-page .header .thumbnail {
   position: relative;
   height: 400px;
@@ -7185,6 +7188,17 @@ button {
     left: 0;
     z-index: 2;
     background: #00000050; }
+
+.al-page .header.no-thumb .thumbnail {
+  height: 300px;
+  background: #3db3b5; }
+  .al-page .header.no-thumb .thumbnail .centered_content {
+    bottom: 40px;
+    padding: 20px 10px;
+    border-radius: 10px;
+    background: #33a5a7; }
+  .al-page .header.no-thumb .thumbnail::after {
+    content: none; }
 
 .al-page .content-wrapper {
   padding: 40px 50px;

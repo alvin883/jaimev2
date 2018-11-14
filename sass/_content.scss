@@ -2,10 +2,6 @@
 
 .al-page {
     .header {
-        &.no-thumb {
-            height: 150px;
-            background: linear-gradient(45deg,$color__background-theme-1,$color__background-theme-3);
-        }
         .thumbnail {
             position: relative;
             height: 400px;
@@ -28,6 +24,21 @@
                 left: 0;
                 z-index: 2;
                 background: #00000050;
+            }
+        }
+        &.no-thumb {
+            .thumbnail {
+                height: 300px;
+                background: $color__background-theme-1;
+                .centered_content {
+                    bottom: 40px;
+                    padding: 20px 10px;
+                    border-radius: 10px;
+                    background: $color__background-theme-2;
+                }
+                &::after {
+                    content: none;
+                }
             }
         }
     }
