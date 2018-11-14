@@ -1,7 +1,7 @@
 <?php
 	get_header();
 
-	get_template_part('template-parts/landingpage/header');
+	get_template_part('template-parts/landingpage/header-slider');
 
     if(have_posts()){ ?>
         <div class="card-columns">

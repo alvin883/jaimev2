@@ -11,7 +11,8 @@ var gulp = require('gulp'),
 		sass: {
 			errLogToConsole: true,
 			precision: 8,
-			noCache: true
+			noCache: true,
+			outputStyle: "compressed"
 		}
 	};
 

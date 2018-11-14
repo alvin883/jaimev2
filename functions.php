@@ -74,31 +74,6 @@ add_action( 'after_setup_theme', 'jaime_setup' );
  *
  * @global int $content_width
  */
-function jaime_content_width() {
-	// This variable is intended to be overruled from themes.
-	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
-	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'jaime_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'jaime_content_width', 0 );
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function jaime_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'jaime' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'jaime' ),
-		'before_widget' => '',
-		'after_widget'  => '',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	) );
-}
-add_action( 'widgets_init', 'jaime_widgets_init' );
 
 
 // WARNING : this function will remove the default wordpress CSS
@@ -128,43 +103,18 @@ remove_filter( 'the_content', 'wpautop' );
 /**
  * Custom Comment Template
  */
-require get_template_directory() . '/template-parts/custom-comments.php';
+require get_template_directory() . '/inc/custom-comments.php';
 
 
 /**
- * Comment form hidden fields
+ * Add CSS/JS Scritps
  */
-function comment_form_hidden_fields(){
-    comment_id_fields();
-    if ( current_user_can( 'unfiltered_html' ) ){
-        wp_nonce_field( 'unfiltered-html-comment_' . get_the_ID(), '_wp_unfiltered_html_comment', false );
-    }
-}
-
+require get_template_directory() . '/inc/scripts.php';
 
 /**
- * Enqueue scripts and styles.
+ * Register Widget Areas
  */
-function jaime_scripts() {
-	// Add `style.css`
-	wp_enqueue_style( 'jaime-style', get_stylesheet_uri() );
-
-	// Add `js/thisscript.js`
-	wp_enqueue_script( 'thisscript', get_template_directory_uri() . '/js/thisscript.js', array('jquery') );
-
-	// Add slick-carousel
-	wp_enqueue_script( 'slick-carousel', get_template_directory_uri() . '/node_modules/slick-carousel/slick/slick.min.js', array('jquery') );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'jaime_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/widgets.php';
 
 /**
  * Custom template tags for this theme.
@@ -181,28 +131,13 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
-
-
-/**
- * Redux Framework
- */
-if(!class_exists('ReduxFramework')){
-    require_once (get_template_directory() . '/redux/framework.php');
-    
-}
+// Redux Framework
+if(!class_exists('ReduxFramework')) require_once (get_template_directory() . '/redux/framework.php');
 // Register Redux
 require_once get_template_directory() . '/inc/redux-config.php';
 // Redux getter
-require_once get_template_directory() . '/inc/theme_options.php';
+require_once get_template_directory() . '/inc/theme-options.php';
 
 
-/**
- * Sosial Media Icons
- */
+// Sosial Media Icons
 require get_template_directory() . '/inc/social-media-icons.php';
