@@ -103,3 +103,25 @@
         }
     }
 }
+.page-404 {
+    position: relative;
+    min-height: 400px;
+    margin-bottom: 20px;
+    color: $color__background-theme-1;
+    background: #fafafa url("src/img/404.png") no-repeat 103% 50% / auto 100%;
+    .centered-content {
+        @include centered-content();
+        width: fit-content;
+        max-width: calc(100% - 40px);
+        box-shadow: 0 10px 20px 0px #00000010;
+        padding: 20px 30px;
+        border-radius: 40px;
+        background: #fffffff6;
+        .title { @include title(); }
+        .subtitle {
+            @include subtitle();
+            font-size: 18px;
+            &.second { @include opacity-6();font-size: 14px; }
+        }
+    }
+}

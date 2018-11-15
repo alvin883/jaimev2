@@ -130,3 +130,10 @@
 
 @mixin opacity-6(){ opacity: .6; }
 @mixin opacity-8(){ opacity: .8; }
+
+@mixin centered-content(){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
