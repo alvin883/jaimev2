@@ -17,7 +17,7 @@ jQuery(document).ready(function(){
 
 	// Check search value
 	$("#search-submit").click(function(){
-		var search = $('#s').val();
+		var search = $('#searchstring').val();
 		// If nothing , don't perform the search action
 		if (!search) return false;
 	});
