@@ -101,12 +101,6 @@ remove_filter( 'the_content', 'wpautop' );
 
 
 /**
- * Custom Comment Template
- */
-require get_template_directory() . '/inc/custom-comments.php';
-
-
-/**
  * Add CSS/JS Scritps
  */
 require get_template_directory() . '/inc/scripts.php';

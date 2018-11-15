@@ -63,12 +63,12 @@
 
 
 // Input with outline
-@mixin input($color) {
+@mixin input($color,$text: $color) {
     height: 40px;
     width: 300px;
     padding: 0 22px;
     transition: $transition;
-    color: $color;
+    color: $text;
     box-sizing: border-box;
     border: 2px solid mix($color,transparent,20%);
     border-radius: 3px;
@@ -85,7 +85,7 @@
 
 // Title
 @mixin title (){
-    font-size: 30px;
+    font-size: 18px;
     font-weight: 600;
     padding: 0px 0;
 }
