@@ -46,7 +46,7 @@
 			
 			<img src="<?php echo get_template_directory_uri(); ?>/src/img/jaime-logo.png" alt="Jaime Logo" class="logo">
 
-			<button class="btn-fab m-1" onclick="toggleSearchPage();">
+			<button class="btn-fab m-1 js__toggle-searchbar">
 				<i class="fas fa-search"></i>
 			</button>
 		</nav>

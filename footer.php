@@ -2,8 +2,8 @@
         <div class="subscribe">
             <div class="title">Subscribe to my Newsletter and receive latest posts in your Inbox!</div>
             <div class="form" id="subscribe">
-                <input type="text" class="name m-2" placeholder="Your Name" onblur="inputCheck(this)"/>
-                <input type="email" class="email m-2" placeholder="Your Email" onblur="inputCheck(this)"/>
+                <input type="text" class="name m-2" placeholder="Your Name"/>
+                <input type="email" class="email m-2" placeholder="Your Email"/>
                 <button class="btn m-2">
 					<i class="fas fa-check"></i>
 				</button>
@@ -52,7 +52,7 @@
         </div>
         <img src="<?php echo get_template_directory_uri(); ?>/src/img/jaime-logo.png" alt="Jaime Logo" class="logo"> 
         <div class="wrapper_backtotop">
-            <a onclick="scrollToTop()">Back to top</a>
+            <a class="js__to-top-page">Back to top</a>
         </div>
         <div class="copyright">Copyright <?php echo date("Y");?> - Daily Jaime - by HeadLab</div>
     </div>
