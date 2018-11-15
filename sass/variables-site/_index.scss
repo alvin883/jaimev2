@@ -1,5 +1,18 @@
-@import "colors";
-@import "transition";
-//@import "typography";
-//@import "structure";
-//@import "columns";
+// COLOR
+//  Background
+    $color__background-white: #fff;
+    $color__background-theme-1: #3db3b5;
+    $color__background-theme-2: #33a5a7;
+    $color__background-theme-3: #266d6f;
+
+//  Text
+    $color__text-dark-1: #263238;
+    $color__text-dark-2: #37474f;
+    $color__text-dark-3: #455a64;
+    $color__text-dark-4: #546e7a;
+
+    
+
+// TRANSITIONS
+$transition: .5s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-2: .3s cubic-bezier(0.4, 0, 0.2, 1);
