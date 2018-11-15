@@ -30,7 +30,7 @@
         </div>
     <?php
     } else {
-        get_template_part('404.php');
+        get_template_part('404');
     }
 	
 	// get_template_part('template-parts/landingpage/footer');
