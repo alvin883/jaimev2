@@ -13,7 +13,7 @@
 	<div id="mini-header">
 		<div class="sub-header">
 			<div class="subtitle">Results for : </div>
-			<div class="title"><?php echo get_search_query(); ?></div>
+			<div class="title"><?php the_search_query(); ?></div>
 			<div class="subtitle"><?php echo 'Found ' . $wp_query->found_posts . ' items'; ?></div>
 		</div>
 	</div>	
