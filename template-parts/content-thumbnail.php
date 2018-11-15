@@ -9,7 +9,7 @@
 
 ?>
 
-<a href="<?php echo the_permalink();?>">
+<a href="<?php the_permalink();?>">
 	<div class="al-card">
 		<div class="header">
 		<?php if(has_post_thumbnail()){ ?>
