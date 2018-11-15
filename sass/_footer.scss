@@ -59,7 +59,10 @@
 						margin-right: 5px;
 						display: inline-flex;
 						vertical-align: middle;
-						.mdi {margin: auto;}
+						justify-content: center;
+						svg {
+							height: 100%;
+						}
 					}
 				}
 			}

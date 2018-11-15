@@ -8,9 +8,6 @@ function jaime_scripts() {
     // `js/thisscript.js`
     wp_enqueue_script( 'thisscript', get_template_directory_uri() . '/js/dist/thisscript.js', array('jquery') );
 
-    // `js/get_instagram.js`
-    //wp_enqueue_script( 'get_instagram', get_template_directory_uri() . '/js/get_instagram.js', array('jquery') );
-
     // slick-carousel
     wp_enqueue_script( 'slick-carousel', get_template_directory_uri() . '/node_modules/slick-carousel/slick/slick.min.js', array('jquery') );
 
