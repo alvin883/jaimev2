@@ -7,6 +7,7 @@ var gulp = require('gulp'),
 	autoprefixer = require('gulp-autoprefixer'),
 	notify = require( 'gulp-notify' ),
 	sass = require('gulp-sass'),
+	uglify =  require('gulp-uglify-es').default,
 	options = {
 		sass: {
 			errLogToConsole: true,
@@ -17,33 +18,41 @@ var gulp = require('gulp'),
 	};
 
 
-// Compiling `./sass/style.scss` to `style.css`
-gulp.task('styles', function () {
-	return gulp.src('./sass/style.scss')
-		.pipe(plumber())
-		.pipe(sass(options.sass))
-		.pipe(autoprefixer())
-		.pipe(gulp.dest('.'))
-		.pipe(notify({ title: 'Sass', message: 'sass task complete' }))
-});
+// Javascript
+	// Compiler
+	gulp.task('compile-js', function() {
+		return gulp.src('./js/thisscript.js')
+			// Minify
+			.pipe(uglify())
+			.pipe(gulp.dest('./js/dist'))
+			.pipe(notify({ title: 'Javascript', message: 'Javascript have compiled !' }))
+	});
+	// Watcher
+	gulp.task('watch-js',function(){
+		gulp.watch('./js/**/*.js', gulp.series('compile-js'));
+	});
 
 
-// Compiling `./sass/login-style.scss` to `./css/login-styles.css`
-gulp.task('login-styles', function () {
-	return gulp.src('./sass/login-style.scss')
-		.pipe(plumber())
-		.pipe(sass(options.sass))
-		.pipe(autoprefixer())
-		.pipe(gulp.dest('./css'))
-		.pipe(notify({ title: 'Sass', message: 'sass task complete' }))
-});
-
-
-// Watch changes to all SCSS file in ./sass
-gulp.task('watch', function () {
-	gulp.watch('./sass/**/*.scss', gulp.parallel([gulp.series('styles')/*, gulp.series('login-styles')*/]));
-});
+// SASS
+	// Compiler
+	gulp.task('compile-sass', function () {
+		return gulp.src('./sass/style.scss')
+			.pipe(plumber())
+			.pipe(sass(options.sass))
+			.pipe(autoprefixer())
+			.pipe(gulp.dest('.'))
+			.pipe(notify({ title: 'SASS', message: 'SASS have compiled !' }))
+	});
+	// Watcher
+	gulp.task('watch-sass', function () {
+		gulp.watch('./sass/**/*.scss', gulp.series('compile-sass'));
+	});
 
 
 // Default run of `gulp` command
-gulp.task('default', gulp.parallel([gulp.series('styles'), gulp.series('watch')]));
+gulp.task('default', gulp.parallel([
+	gulp.series('compile-sass'),
+	gulp.series('compile-js'),
+	gulp.series('watch-sass'),
+	gulp.series('watch-js')
+]));
