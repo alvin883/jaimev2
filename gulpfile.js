@@ -29,7 +29,7 @@ var gulp = require('gulp'),
 	});
 	// Watcher
 	gulp.task('watch-js',function(){
-		gulp.watch('./js/**/*.js', gulp.series('compile-js'));
+		gulp.watch('./js/thisscript.js', gulp.series('compile-js'));
 	});
 
 
