@@ -1,13 +1,24 @@
+<div id="popup">
+    <div class="content">
+        <div class="title">Error</div>
+        <div class="message">Message</div>
+        <button class="js__popup-close">Close</button>
+    </div>
+    <div class="block js__popup-close"></div>
+</div>
+
 <div id="footer">
         <div class="subscribe">
             <div class="title">Subscribe to my Newsletter and receive latest posts in your Inbox!</div>
-            <div class="form" id="subscribe">
-                <input type="text" class="name m-2" placeholder="Your Name"/>
-                <input type="email" class="email m-2" placeholder="Your Email"/>
-                <button class="btn m-2">
-					<i class="fas fa-check"></i>
-				</button>
-            </div>
+            <form action="http://github.us19.list-manage.com/subscribe/post?u=b1551785dcbfc5c952c50bd86&amp;id=f048192049" method="get" name="mc-embedded-subscribe-form" id="subscribe-email">
+                <div class="form" id="subscribe">
+                    <input type="text" class="name m-2" placeholder="Your Name" name="FNAME" required/>
+                    <input type="email" class="email m-2" placeholder="Your Email" name="EMAIL" required/>
+                    <button class="btn m-2">
+                        <i class="fas fa-check"></i>
+                    </button>
+                </div>
+            </form>
         </div>
         <div class="box sponsor">
             <div class="title">SPONSORS</div>
