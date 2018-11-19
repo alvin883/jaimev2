@@ -1,4 +1,5 @@
 'use strict';
+console.log("FINAL");
 
 jQuery(document).ready(function(){
 	var $ = jQuery;
@@ -10,7 +11,8 @@ jQuery(document).ready(function(){
         autoplaySpeed: 7000,
         swipeToSlide: true
     });
-	
+
+
 	// Perform Instagram 
 	get_instagram("danielkordan");
 	
@@ -52,6 +54,7 @@ jQuery(document).ready(function(){
 		//$('#searchbutton').trigger('focus');
 		return $('#searchpage').removeClass('active');
 	});
+
 
 	/**
 	 * Get and display Instagram Feed
@@ -154,4 +157,54 @@ jQuery(document).ready(function(){
 				});
 			});
 	}
+	
+
+	// Subscribe Mailchimp Popup
+	$(".js__popup-close").click(function(){
+		$("#popup").removeClass("active");
+	});
+
+
+	// Subscribe Mailchimp Submit
+    $("#subscribe-email").submit(function(e) {   
+        e.preventDefault();
+
+        var $form = $("#subscribe-email");
+
+        $.ajax({
+            url: $form.attr('action').replace('/post?', '/post-json?').concat('&c=?'),
+            data: $form.serialize(),
+            cache       : false,
+            dataType    : 'json',
+            contentType: "application/json; charset=utf-8",
+            error       : function(err) {
+				var title = 'Error !',
+				message = "There is a problem, please try again !";
+				$("#popup").find(".title").html(title);
+				$("#popup").find(".message").html(message);
+				$("#popup").outerHeight();
+				$("#popup").addClass('active');
+			 },
+            success     : function(data) {
+                console.log(data);
+                var title,message;
+                if (data.result != "success") {
+                    // Error
+					title = 'Error !';
+					if(data.msg.indexOf("enter a value") > -1){
+                        message = "Please fill the form";
+                    }else{
+                        message = data.msg;
+                    }
+                } else {
+                    title = 'Success !';
+                    message = "Thank you for subscribing my newsletter :)";
+                }
+                $("#popup").find(".title").html(title);
+                $("#popup").find(".message").html(message);
+                $("#popup").outerHeight();
+                $("#popup").addClass('active');
+            }
+        });
+    });
 }); 

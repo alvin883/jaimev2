@@ -8,6 +8,7 @@ var gulp = require('gulp'),
 	notify = require( 'gulp-notify' ),
 	sass = require('gulp-sass'),
 	uglify =  require('gulp-uglify-es').default,
+	concat = require('gulp-concat'),
 	options = {
 		sass: {
 			errLogToConsole: true,
@@ -21,7 +22,9 @@ var gulp = require('gulp'),
 // Javascript
 	// Compiler
 	gulp.task('compile-js', function() {
-		return gulp.src('./js/thisscript.js')
+		return gulp.src('./js/src/**/*.js')
+			// Compile to one file
+			.pipe(concat('script.js'))
 			// Minify
 			.pipe(uglify())
 			.pipe(gulp.dest('./js/dist'))
@@ -29,7 +32,7 @@ var gulp = require('gulp'),
 	});
 	// Watcher
 	gulp.task('watch-js',function(){
-		gulp.watch('./js/thisscript.js', gulp.series('compile-js'));
+		gulp.watch('./js/src/**/*.js', gulp.series('compile-js'));
 	});
 
 
