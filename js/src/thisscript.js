@@ -1,5 +1,4 @@
 'use strict';
-console.log("FINAL");
 
 jQuery(document).ready(function(){
 	var $ = jQuery;

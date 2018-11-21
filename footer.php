@@ -45,13 +45,11 @@
 
                             if(array_key_exists($key,$social_icons) && $value != '' && !empty($value)){
 								?>
-									<a href="<?php echo $value; ?>">
-										<button class="btn m-2">
+									<a href="<?php echo $value; ?>" class="btn m-2">
 											<span class="btn-fab">
 												<i class="fab fa-<?php echo $social_icons[$key]["font"]; ?>"></i>
 											</span>
 											<?php echo $social_icons[$key]["name"]; ?>
-										</button>
 									</a>
                                 <?php
                             }

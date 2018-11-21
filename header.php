@@ -31,10 +31,8 @@
 
                             if(array_key_exists($key,$social_icons) && $value != '' && !empty($value)){
 								?>
-									<a class="m-1" href="<?php echo $value;?>">
-										<button class="btn-fab">
+									<a class="m-1 btn-fab" href="<?php echo $value;?>">
 											<i class="fab fa-<?php echo $social_icons[$key]["font"]; ?>"></i>
-										</button>
 									</a>
                                 <?php
                             }

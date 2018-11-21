@@ -103,15 +103,23 @@
 			padding-bottom: 10px;
 		}
 		.content {
-			button {
+			button,.btn {
 				padding: 0 20px;
 				font-size: 16px;
 			}
 			
 			&.social {
-				button { 
+				.btn { 
+					padding-top: 10px;
+					padding-bottom: 10px;
+					text-decoration: none;
+					color: inherit;
 					text-transform: capitalize;
 					background: transparent;
+					&:hover,&:focus {
+						outline: none;
+						background: mix(#000000, transparent, 5);
+					}
 
 					span.btn-fab {
 						@include button-fab(#ffffff,#000000);
