@@ -7,8 +7,11 @@
     left: 0;
     z-index: 2;
 
-    button.btn-fab {
+    .btn-fab {
         @include button-fab(#ffffff, #000000);
+        svg {
+            @include centered-content();
+        }
     }
     .navbar {
         z-index: 10;
